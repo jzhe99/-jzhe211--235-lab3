@@ -101,23 +101,31 @@ def test_move_north(robot):
 
 
 def test_move_east(robot):
+    robot.turn()
     robot.move()
     state = robot.state()
-    assert state['row'] == 9
-    assert state['col'] == 1
+    assert state['row'] == 10
+    assert state['col'] == 2
 
 
 def test_move_south(robot):
     robot.move()
+    robot.turn()
+    robot.turn()
+    robot.move()
     state = robot.state()
-    assert state['row'] == 9
+    assert state['row'] == 10
     assert state['col'] == 1
 
 
 def test_move_west(robot):
+    robot.turn()
+    robot.move()
+    robot.turn()
+    robot.turn()
     robot.move()
     state = robot.state()
-    assert state['row'] == 9
+    assert state['row'] == 10
     assert state['col'] == 1
 
 
